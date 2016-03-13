@@ -1,5 +1,5 @@
 pkgname=minidlna
-pkgver=1.1.4
+pkgver=1.1.5
 pkgrel=1
 pkgdesc="A DLNA/UPnP-AV Media server (aka ReadyDLNA)"
 arch=('x86_64')
@@ -11,7 +11,7 @@ install=minidlna.install
 source=(http://downloads.sourceforge.net/project/minidlna/minidlna/$pkgver/minidlna-$pkgver.tar.gz
 	minidlna.service
 	minidlna.tmpfiles)
-md5sums=('67c9e91285bc3801fd91a5d26ea775d7'
+md5sums=('1970e553a1eb8a3e7e302e2ce292cbc4'
          'd419b84f0ceda0adae27019a06df5065'
          '26de27b12d6a37c47d9714107d07aac9')
 
