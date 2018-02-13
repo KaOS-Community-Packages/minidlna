@@ -1,7 +1,9 @@
-minidlna-1.1.4-1
-================
-
+# minidlna
 A DLNA/UPnP-AV Media server (aka ReadyDLNA)
 
+[Homepage](http://sourceforge.net/projects/minidlna/)
 
-URL: http://sourceforge.net/projects/minidlna/
+### Install:
+```
+kcp -i minidlna
+```

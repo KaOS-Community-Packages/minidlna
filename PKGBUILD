@@ -1,11 +1,11 @@
 pkgname=minidlna
 pkgver=1.2.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A DLNA/UPnP-AV Media server (aka ReadyDLNA)"
 arch=('x86_64')
 url="http://sourceforge.net/projects/minidlna/"
 license=('GPL')
-depends=('libexif' 'libjpeg' 'libid3tag' 'flac' 'libvorbis' 'ffmpeg' 'sqlite')
+depends=('libexif' 'libjpeg-turbo' 'libid3tag' 'flac' 'libvorbis' 'ffmpeg' 'sqlite')
 backup=('etc/minidlna.conf')
 install=minidlna.install
 source=(http://downloads.sourceforge.net/project/minidlna/minidlna/$pkgver/minidlna-$pkgver.tar.gz
@@ -22,13 +22,13 @@ prepare() {
 
 build() {
     cd ${srcdir}/${pkgname}-${pkgver}
-    ./configure --prefix=/usr --sbindir=/usr/bin
+    ./configure --prefix=/usr
     make
 }
 
 package() {
     cd ${srcdir}/${pkgname}-${pkgver}
-    DESTDIR=${pkgdir} make install
+    make DESTDIR=${pkgdir} install
     install -Dm644 minidlna.conf ${pkgdir}/etc/minidlna.conf
     install -Dm0644 ${srcdir}/minidlna.tmpfiles ${pkgdir}/usr/lib/tmpfiles.d/minidlna.conf
     install -Dm0644 ${srcdir}/minidlna.service ${pkgdir}/usr/lib/systemd/system/minidlna.service
